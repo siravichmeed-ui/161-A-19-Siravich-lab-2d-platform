@@ -1,3 +1,4 @@
+using System.Runtime;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
@@ -13,12 +14,21 @@ public abstract class Character : MonoBehaviour
     protected Animator anim;
     protected Rigidbody2D rb;
 
+    public void Initialize(int startHealth)
+    {
+        Health = startHealth;
+        Debug.Log($"{this.name} initialized with {Health} health.");
+
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     //methods
     public void TakeDamage(int damage)
     {
         Health -= damage;
         Debug.Log($"{this.name} took {damage} damage, Current health: {Health}");
+        IsDead();
     }
     public bool IsDead()
     {
@@ -46,4 +56,5 @@ public abstract class Character : MonoBehaviour
     {
         
     }
+    
 }

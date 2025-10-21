@@ -1,7 +1,11 @@
 using UnityEngine;
 
-public class Enemy : Character
+public abstract class Enemy : Character
 {
+
+    public abstract void Behavior();
+    public int DamageHit { get; protected set; }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
