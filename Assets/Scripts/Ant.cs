@@ -6,8 +6,8 @@ public class Ant : Enemy
     public Transform[] MovePoint;
     void Start()
     {
-        base.Initialize(20);
-        DamageHit = 20;
+        base.Initialize(200);
+        DamageHit = 200;
         
         velocity = new Vector2(-1.0f, 0.0f); 
     }

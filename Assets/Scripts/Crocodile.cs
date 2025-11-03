@@ -10,8 +10,8 @@ public  class Crocodile : Enemy, IShootable
     public float WaitTime { get; set; }
     void Start()
     {
-        base.Initialize(50);
-        DamageHit = 30;
+        base.Initialize(500);
+        DamageHit = 300;
         //set atk range and target
         atkRange = 20.0f;
         player = GameObject.FindFirstObjectByType<Player>();
@@ -41,7 +41,7 @@ public  class Crocodile : Enemy, IShootable
             anim.SetTrigger("Shoot");
             var bullet = Instantiate(Bullet, ShootPoint.position,  Quaternion.identity);
             Rock rock = bullet.GetComponent<Rock>();
-            rock.InitWeapon(30, this);
+            rock.InitWeapon(300, this);
             WaitTime = 0f;
         }
     }

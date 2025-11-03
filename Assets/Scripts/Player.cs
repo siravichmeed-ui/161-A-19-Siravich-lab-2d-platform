@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : Character , IShootable
 {
+    [SerializeField] private PlayerHPBar hpBar;
     [field: SerializeField] public GameObject Bullet { get; set; }
     [field: SerializeField] public Transform ShootPoint { get; set; }
     public float ReloadTime { get; set; }
@@ -13,7 +14,8 @@ public class Player : Character , IShootable
     {
         ReloadTime = 1.0f;
         WaitTime = 0f;
-        base.Initialize(100);
+        base.Initialize(1000);
+        if (hpBar != null) hpBar.Bind(this);
     }
     public void OnHitWith(Enemy enemy)
     {
@@ -47,7 +49,7 @@ public class Player : Character , IShootable
             var bullet = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             Banana banana = bullet.GetComponent<Banana>();
             if (banana != null)
-                banana.InitWeapon(20, this);
+                banana.InitWeapon(200, this);
                 
             WaitTime = 0f;
         }

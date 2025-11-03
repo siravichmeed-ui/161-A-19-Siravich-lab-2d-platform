@@ -26,7 +26,7 @@ public class Rock : Weapon
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        damage = 20;
+        damage = 200;
         force = new Vector2(GetShootDirection() * 90, 400);
         Move();
     }
