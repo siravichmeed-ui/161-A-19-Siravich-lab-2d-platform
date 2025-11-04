@@ -14,7 +14,7 @@ public class Player : Character , IShootable
     {
         ReloadTime = 1.0f;
         WaitTime = 0f;
-        base.Initialize(1000);
+        base.Initialize(100);
         if (hpBar != null) hpBar.Bind(this);
     }
     public void OnHitWith(Enemy enemy)
@@ -49,7 +49,7 @@ public class Player : Character , IShootable
             var bullet = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             Banana banana = bullet.GetComponent<Banana>();
             if (banana != null)
-                banana.InitWeapon(200, this);
+                banana.InitWeapon(20, this);
                 
             WaitTime = 0f;
         }

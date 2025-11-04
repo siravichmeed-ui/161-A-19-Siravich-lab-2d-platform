@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class HPBar : MonoBehaviour
+public class PlayerHPBar : MonoBehaviour
 {
     public Slider slider;
     private Character target;

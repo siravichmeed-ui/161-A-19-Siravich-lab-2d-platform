@@ -26,13 +26,10 @@ public abstract class Character : MonoBehaviour
     public void Initialize(int startHealth)
     {
 
-        Health = startHealth;
         maxHealth = startHealth;
-        
-        Debug.Log($"{this.name} initialized with {Health} health.");
-
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        Health = maxHealth;
     }
 
     //methods
